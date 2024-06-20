@@ -1,5 +1,3 @@
-
-
 const container = document.querySelector(".container");
 
 const onClickSearch =()=>{
@@ -32,17 +30,19 @@ btn_search.addEventListener("click",onClickSearch);
 
 const dataDisplay = document.querySelector(".dataDisplay");
 let city = document.querySelector("#city");
-let temp = document.querySelector("#temp");
+let temp_data = document.querySelector("#temp_str");
+let temp_img = document.querySelector("#temp_icon");
 let region = document.querySelector("#region");
 let country = document.querySelector("#country");
 let condition = document.querySelector("#condition");
 
-const displayWeatherData = (city_d, temp_d, region_d, country_d, condition_d)=> {
-    city.textContent = city_d;
-    temp.textContent = temp_d + "°C";
-    region.textContent = region_d;
-    country.textContent = country_d;
-    condition.textContent = condition_d;
+const displayWeatherData = (city_str, temp_str,temp_icon, region_str, country_str, condition_str)=> {
+    city.textContent = city_str;
+    temp_data.textContent = temp_str + "°C";
+    temp_img.src = temp_icon;
+    region.textContent = region_str;
+    country.textContent = country_str;
+    condition.textContent = condition_str;
 }
 const processWeatherData = (weatherData)=>{
     if(weatherData == undefined){
@@ -50,16 +50,17 @@ const processWeatherData = (weatherData)=>{
         return;
     }
     console.log(weatherData);
-    const city_d = weatherData.location.name;
-    const temp_d = weatherData.current.temp_c;
-    const region_d = weatherData.location.region;
-    const country_d = weatherData.location.country;
-    const condition_d = weatherData.current.condition.text;
-    displayWeatherData(city_d, temp_d, region_d, country_d, condition_d);
+    const city_str = weatherData.location.name;
+    const temp_str = weatherData.current.temp_c;
+    const region_str = weatherData.location.region;
+    const country_str = weatherData.location.country;
+    const condition_str = weatherData.current.condition.text;
+    const temp_icon = 'https:'+ weatherData.current.condition.icon;
+    displayWeatherData(city_str, temp_str, temp_icon, region_str, country_str, condition_str);
     
 }
 
-//default run
+//default 
 const setDefaultData = (city)=>{
     fetchWeatherData(city).then((data)=>processWeatherData(data));
 }

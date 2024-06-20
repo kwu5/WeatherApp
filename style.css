@@ -23,14 +23,16 @@ body{
 }
 
 .container .header .header-search{
-    background-color:lightgreen;
+    background-color:aliceblue;
     padding: 20px;
 }
 
 .container .header .header-search >input{
     background-color: aliceblue;
     width: 300px;
+    border: 2px solid black;
 }
+
 
 .header-search >button{
     border-radius: 8px;
@@ -39,8 +41,9 @@ body{
 }
 
 .container .dataDisplay{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     flex:3;
-    background-color: bisque;
+    background-color: lightblue;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -51,11 +54,26 @@ body{
 }
 .container #temp{
     flex: 4 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container #temp #temp_str{
+    flex: 0 1 0;
+    text-align:end;
+}
+.container #temp #temp_icon{
+    flex: 0;
+    height: 64px;
+    width: 64px;
+    margin: 10px;
 }
 .container #region{
-    flex: 2 1 0;
+    flex: 1 1 0;
 }
 .container #country{
     flex: 1 1 0;
 }
-
+.container #condition{
+    flex: 2 1 0;
+}
