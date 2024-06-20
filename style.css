@@ -41,4 +41,21 @@ body{
 .container .dataDisplay{
     flex:3;
     background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
+
+.container #city{
+    flex: 2 1 0;
+}
+.container #temp{
+    flex: 4 1 0;
+}
+.container #region{
+    flex: 2 1 0;
+}
+.container #country{
+    flex: 1 1 0;
+}
+
