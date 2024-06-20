@@ -29,7 +29,7 @@ body{
 
 .container .header .header-search >input{
     background-color: aliceblue;
-    
+    width: 300px;
 }
 
 .header-search >button{

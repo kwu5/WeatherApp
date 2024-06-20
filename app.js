@@ -24,7 +24,7 @@ const fetchWeatherData = async (userInput)=>{
 const headerSearch = document.querySelector(".header-search");
 const userInput = document.querySelector("#userInput");
 const btn_search = document.querySelector("#searchButton");
-userInput.value = "San Francisco";
+
 btn_search.addEventListener("click",onClickSearch);
 
 
