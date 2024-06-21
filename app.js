@@ -1,3 +1,4 @@
+const apiKey = '8f0cc715ca4d4964b11205201241906'
 const container = document.querySelector(".container");
 
 const onClickSearch =()=>{
@@ -6,7 +7,7 @@ const onClickSearch =()=>{
 }
 const fetchWeatherData = async (userInput)=>{
     try{
-        let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=8f0cc715ca4d4964b11205201241906&q=${userInput}&aqi=no`);
+        let response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${userInput}&aqi=no`);
         if(response.status == 200){
             let data = await response.json();
             return data;
