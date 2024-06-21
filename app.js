@@ -7,7 +7,9 @@ const onClickSearch =()=>{
 }
 const fetchWeatherData = async (userInput)=>{
     try{
-        let response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${userInput}&aqi=no`);
+        const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${userInput}&aqi=no`;
+        let response = await fetch(url);
+
         if(response.status == 200){
             let data = await response.json();
             return data;
